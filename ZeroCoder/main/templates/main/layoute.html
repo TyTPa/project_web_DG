@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    {% block title %}
+    <title>CatDjango</title>
+    {% endblock %}
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-md-3 bg-light sidebar">
+                <div class="text-center mt-3">
+                    <img src="{% static 'main/img/cat.jpg' %}" alt="котик с голубыми глазами" class="img-fluid rounded-circle mb-3" style="max-width: 100px;">
+                    <h4 class="text-primary">CatDjango</h4>
+                </div>
+                <nav class="nav flex-column mt-4">
+                    <a class="nav-link active" href="{% url 'home' %}">Главная страница</a>
+                    <a class="nav-link" href="{% url 'page2' %}">Вторая страница</a>
+                    <a class="nav-link" href="{% url 'data' %}">Третья страница</a>
+                    <a class="nav-link" href="{% url 'test' %}">Четвертая страница</a>
+                </nav>
+            </aside>
+            <main class="col-md-9">
+                {% block content %}
+                <!-- Основной контент будет здесь -->
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <!-- Подключение Bootstrap JS и зависимостей -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
