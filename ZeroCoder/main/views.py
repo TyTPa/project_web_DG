@@ -9,6 +9,6 @@ def index(request):
 def new(request):
     return render(request, 'main/new.html')
 def data(request):
-    return HttpResponse("<h1>Это моя вторая страница Data</h1>")
+    return render(request, 'main/data.html')
 def test(request):
-    return HttpResponse("<h1>Это мой третья страница Test</h1>")
+    return render(request, 'main/test.html')
