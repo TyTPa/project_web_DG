@@ -22,7 +22,7 @@ def create_news(request):
 
             if form.is_valid():
                 news_post = form.save(commit=False)
-                news_post.user = request.user  # Установите автора текущим пользователем
+                news_post.user = request.user.username  # Установите автора текущим пользователем
                 news_post.save()
                 return redirect ('news_home')
 
