@@ -7,7 +7,7 @@ class News_post(models.Model):
 	short_description = models.CharField('Краткое описание новости', max_length=200)
 	text = models.TextField('Новость')
 	pub_date = models.DateTimeField('Дата публикации')
-	user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор', default=1)
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 	def __str__(self):
 		return self.title
